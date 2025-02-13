@@ -1,14 +1,21 @@
-import './App.css'
-import MovieCard from './components/MovieCard'
+import "./css/App.css";
+import Navbar from "./components/Navbar";
+import Favorites from "./pages/Favorites";
+import Home from "./pages/Home";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  
-
   return (
-    <>
-      <MovieCard movie={{title: "Sam's Film", release_date: "2024"}}/>
-    </>
-  )
+    <div>
+      <Navbar />
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/favorites" element={<Favorites />} />
+        </Routes>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
